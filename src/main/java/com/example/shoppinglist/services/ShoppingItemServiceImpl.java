@@ -1,6 +1,7 @@
 package com.example.shoppinglist.services;
 
 import com.example.shoppinglist.persist.entities.ShoppingItem;
+import com.example.shoppinglist.persist.entities.User;
 import com.example.shoppinglist.persist.repositories.ShoppingItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,11 @@ public class ShoppingItemServiceImpl implements ShoppingItemService {
     @Override
     public List<ShoppingItem> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<ShoppingItem> findByUserUsername(String username) {
+        return repository.findByUserUsername(username);
     }
 
     @Override
